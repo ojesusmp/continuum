@@ -3,6 +3,14 @@
 All notable changes to continuum are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/); versions follow SemVer.
 
+## [Unreleased]
+
+### Added
+- **Documentation suite** under `docs/`: Usage, Configuration, Architecture, Troubleshooting,
+  and FAQ guides.
+- **CONTRIBUTING.md** and **SECURITY.md** community-health files.
+- **GitHub Sponsors** funding config (`.github/FUNDING.yml`) and a Support section in the README.
+
 ## [0.1.0] - 2026-06-11
 
 Initial release. Hooks-only core (no OS scheduler), cross-platform, zero dependencies.

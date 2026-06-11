@@ -145,6 +145,35 @@ are redacted before anything is persisted.
 
 ---
 
+## Documentation
+
+Detailed guides live in [`docs/`](docs/):
+
+| Guide | What's in it |
+|---|---|
+| [Usage](docs/USAGE.md) | Day-to-day workflow, full CLI, every `status` field, manual checkpoint→resume |
+| [Configuration](docs/CONFIGURATION.md) | Config file, env vars, engram setup, the three memory states |
+| [Architecture](docs/ARCHITECTURE.md) | Module map, checkpoint/resume data flow, bundle lifecycle, design decisions |
+| [Troubleshooting](docs/TROUBLESHOOTING.md) | Hooks not firing, install errors, offline engram, uninstalling |
+| [FAQ](docs/FAQ.md) | Common questions about scope, privacy, platforms |
+| [Contributing](CONTRIBUTING.md) | Dev setup, design rules, how to test, PRs |
+| [Security](SECURITY.md) | Threat model, secret redaction, how to report a vulnerability |
+
+---
+
+## Support
+
+continuum is free and MIT-licensed. If it saves you tokens and time, you can help fund its
+development:
+
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/ojesusmp)
+
+- **Sponsor on GitHub:** <https://github.com/sponsors/ojesusmp> — click the **Sponsor** button at
+  the top of the repository.
+- **No budget?** Starring the repo, reporting bugs, and sending PRs help just as much.
+
+---
+
 ## Roadmap (not in v0.1)
 
 - Optional OS idle-watcher add-on (Windows Scheduled Task / macOS launchd / Linux cron) for

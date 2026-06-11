@@ -1,0 +1,11 @@
+# continuum funding configuration.
+# GitHub reads this file and shows a "Sponsor" button at the top of the
+# repository and on each release. To activate payouts you must also enable
+# GitHub Sponsors once for the ojesusmp account at https://github.com/sponsors.
+#
+# Other platforms can be added later, e.g.:
+#   ko_fi: your_handle
+#   buy_me_a_coffee: your_handle
+#   custom: ["https://paypal.me/your_handle"]
+
+github: [ojesusmp]
