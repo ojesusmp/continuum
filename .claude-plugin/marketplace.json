@@ -1,0 +1,34 @@
+{
+  "name": "continuum",
+  "id": "continuum",
+  "owner": {
+    "name": "ojesusmp"
+  },
+  "metadata": {
+    "description": "continuum marketplace — project continuity across session boundaries for Claude Code",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "continuum",
+      "source": "./",
+      "description": "Checkpoints a distilled resume bundle before context compaction (PreCompact) and on demand, then auto-resumes a fresh low-token session with goal/progress/decisions/next-steps (SessionStart). Engram-optional with local fallback and offline resync. Project-local storage, secret redaction, untrusted-input boundary. Pairs with silex and engram.",
+      "version": "0.1.0",
+      "author": {
+        "name": "ojesusmp"
+      },
+      "keywords": [
+        "continuity",
+        "context",
+        "compaction",
+        "session-resume",
+        "checkpoint",
+        "memory",
+        "token-saving",
+        "claude-code",
+        "ai-coding"
+      ],
+      "category": "workflow"
+    }
+  ]
+}

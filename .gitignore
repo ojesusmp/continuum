@@ -1,0 +1,8 @@
+node_modules/
+.continuum/
+.journal/
+*.continuum-bak
+settings.json.continuum-bak
+.DS_Store
+npm-debug.log*
+*.tgz

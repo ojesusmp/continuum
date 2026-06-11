@@ -1,0 +1,24 @@
+{
+  "name": "continuum",
+  "description": "Project continuity across session boundaries at near-zero token cost. Checkpoints a distilled resume bundle before context compaction and on demand, then auto-resumes a fresh low-token session with goal, progress, decisions and next steps. Engram-optional with local fallback and offline resync. Pairs with silex and engram.",
+  "version": "0.1.0",
+  "author": {
+    "name": "ojesusmp"
+  },
+  "homepage": "https://github.com/ojesusmp/continuum",
+  "repository": "https://github.com/ojesusmp/continuum",
+  "license": "MIT",
+  "keywords": [
+    "continuity",
+    "context",
+    "compaction",
+    "session-resume",
+    "checkpoint",
+    "memory",
+    "token-saving",
+    "claude-code",
+    "ai-coding",
+    "skill"
+  ],
+  "skills": ["./skills/continuum"]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "@ojesusmp/continuum",
+  "version": "0.1.0",
+  "description": "Project continuity across Claude Code session boundaries at near-zero token cost — checkpoints a distilled resume bundle before context compaction and resumes a fresh low-token session with full working knowledge. Engram-optional, cross-platform, zero dependencies.",
+  "license": "MIT",
+  "author": "ojesusmp (https://github.com/ojesusmp)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojesusmp/continuum.git"
+  },
+  "homepage": "https://github.com/ojesusmp/continuum#readme",
+  "bugs": {
+    "url": "https://github.com/ojesusmp/continuum/issues"
+  },
+  "keywords": [
+    "claude-code",
+    "claude",
+    "anthropic",
+    "skill",
+    "plugin",
+    "continuity",
+    "context",
+    "compaction",
+    "session-resume",
+    "checkpoint",
+    "memory",
+    "token-saving",
+    "ai-coding"
+  ],
+  "bin": {
+    "continuum": "bin/install.js"
+  },
+  "files": [
+    ".claude-plugin/",
+    "skills/",
+    "bin/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

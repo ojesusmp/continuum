@@ -1,0 +1,2 @@
+# Normalize line endings to LF — these scripts run on Linux, macOS, and Windows.
+* text=auto eol=lf
