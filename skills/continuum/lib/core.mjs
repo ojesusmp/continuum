@@ -141,10 +141,8 @@ export function remember(noteRaw, metaIn = {}) {
   const meta = { project: metaIn.project || projectName(), kind: metaIn.kind || 'session' };
   const P = paths();
   ensureDir(P.memDir);
-  // 1) local is the source of truth — never lost
   const rec = { ts: nowIso(), agent: 'continuum', project: meta.project, kind: meta.kind, text: note };
   fs.appendFileSync(P.notes, JSON.stringify(rec) + '\n', 'utf8');
-  // 2) mirror to engram if configured; queue to outbox on failure
   const res = tryEngram(note, meta);
   if (res.configured && !res.ok) {
     ensureDir(P.outbox);
@@ -152,7 +150,7 @@ export function remember(noteRaw, metaIn = {}) {
     fs.writeFileSync(path.join(P.outbox, id), JSON.stringify({ note, meta }), 'utf8');
     return { local: true, engram: 'queued' };
   }
-  return { local: true, engram: res.configured ? (res.ok ? 'sent' : 'queued') : 'local-only' };
+  return { local: true, engram: res.configured ? 'sent' : 'local-only' };
 }
 
 export function flushOutbox() {
