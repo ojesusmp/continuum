@@ -61,21 +61,33 @@ export function redact(s) {
 }
 
 // ---------- transcript reading ----------
+// Claude Code stores each project's transcripts under ~/.claude/projects/<encoded>,
+// where <encoded> is the project root path with every non-alphanumeric char replaced by '-'
+// (e.g. C:\Live_Projects\ClaudeChanges -> C--Live-Projects-ClaudeChanges).
+export function encodedProjectDir() {
+  return projectRoot().replace(/[^A-Za-z0-9]/g, '-');
+}
+// Find the newest transcript FOR THIS PROJECT only. Never reach into another project's
+// directory, and never descend into subagents/ (those transcripts carry a subagent's task,
+// not the session goal). Picking the global-newest .jsonl produced wrong-project resume
+// bundles; honoring the "no cross-project bleed" guarantee means scoping to this project.
 export function findActiveTranscript() {
-  const dir = projectsDir();
-  if (!fs.existsSync(dir)) return null;
+  const scoped = path.join(projectsDir(), encodedProjectDir());
+  if (!fs.existsSync(scoped)) return null;
   let best = null;
   const walk = (d) => {
     let entries; try { entries = fs.readdirSync(d, { withFileTypes: true }); } catch { return; }
     for (const e of entries) {
       const fp = path.join(d, e.name);
-      if (e.isDirectory()) walk(fp);
-      else if (e.name.endsWith('.jsonl')) {
+      if (e.isDirectory()) {
+        if (e.name === 'subagents') continue;
+        walk(fp);
+      } else if (e.name.endsWith('.jsonl')) {
         try { const m = fs.statSync(fp).mtimeMs; if (!best || m > best.mtime) best = { file: fp, mtime: m }; } catch { /* */ }
       }
     }
   };
-  walk(dir);
+  walk(scoped);
   return best;
 }
 
